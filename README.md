@@ -18,7 +18,7 @@ This project is designed to run in an isolated virtual environment.
 
 1. **Clone the repository:**
    ```bash
-   git clone [https://github.com/mateist04/rsa-simulator.git](https://github.com/mateist04/rsa-simulator.git)
+   git clone https://github.com/mateist04/rsa-simulator.git
    
    cd rsa-simulator
    ```
