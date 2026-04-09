@@ -74,7 +74,7 @@ def encrypt(pk, plaintext):
     ciphertext = []
     for char in plaintext:
         m = ord(char)
-        c = (m ** key) % n
+        c = pow(m, key, n)
         ciphertext.append(c)
 
     return ciphertext
@@ -84,7 +84,7 @@ def decrypt(pk, ciphertext):
     
     plaintext = []
     for c in ciphertext:
-        m = chr((c ** key) % n)
+        m = chr(pow(c, key, n))
         plaintext.append(m)
 
     return ''.join(plaintext)
@@ -92,11 +92,11 @@ def decrypt(pk, ciphertext):
 if __name__ == '__main__':
     print("RSA Cryptography Simulator")
 
-    p = generate_prime(10, 100)
-    q = generate_prime(10, 100)
+    p = generate_prime(32768, 65535)
+    q = generate_prime(32768, 65535)
 
     while p == q:
-        q = generate_prime(10, 100)
+        q = generate_prime(32768, 65535)
     
     print(f"Generated primes are: p={p}, q={q}")
     
